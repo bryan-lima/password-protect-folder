@@ -22,8 +22,9 @@ REM ====================================================
 :MAIN
 cls
 title PROTEGER PASTA COM SENHA - Menu
-mode 58,18
+mode 58,19
 color 1f
+set op=MAIN
 echo.
 echo.
 echo              Desenvolvido por BRYAN LIMA.
@@ -36,16 +37,20 @@ echo.
 echo.
 echo    [1] Proteger
 echo    [2] Desproteger
+echo    [3] Donate...
+echo.  
 echo    [X] Sair
 echo.
 set /p "op=Escolha o que deseja: "
 
 if %op%==1 goto LOCK
 if %op%==2 goto UNLOCK
+if %op%==3 goto DONATE
 if %op%==X goto EXIT
 if %op%==x goto EXIT
 if %op% NEQ 1 goto INVALID
 if %op% NEQ 2 goto INVALID
+if %op% NEQ 3 goto INVALID
 if %op% NEQ X goto INVALID
 if %op% NEQ x goto INVALID
 
@@ -70,7 +75,7 @@ echo.
 echo.
 echo.
 pause
-goto MAIN
+goto %op%
 
 REM ====================================================
 REM                          LOCK
@@ -339,3 +344,62 @@ REM ====================================================
 :CHECK-UNLOCK
 cd %folder% 1>nul 2>nul
 if '%errorlevel%' == '1' (goto CONTINUE-UNLOCK) else (goto NOT-PROTECTED)
+
+REM ====================================================
+REM                         DONATE
+REM ====================================================
+:DONATE
+cls
+title PROTEGER PASTA COM SENHA - Donate
+mode 60,19
+color 1f
+set op=DONATE
+echo.
+echo.
+echo.
+echo                            DONATE
+echo.
+echo.
+echo    Se lhe ajudei de alguma forma, considere me pagar um
+echo    café como agradecimento. Obrigado!
+echo.
+echo    Abaixo, segue as opções disponíveis no momento:
+echo.
+echo.
+echo    [1] PayPal
+echo.
+echo    [V] Voltar
+echo.
+set /p "donate= Escolha uma opção: "
+
+if %donate%==1 goto PAYPAL
+if %donate%==V goto MAIN
+if %donate%==v goto MAIN
+if %donate% NEQ 1 goto INVALID
+if %donate% NEQ V goto INVALID
+if %donate% NEQ v goto INVALID
+
+REM ====================================================
+REM                        PAYPAL
+REM ====================================================
+:PAYPAL
+cls
+title PROTEGER PASTA COM SENHA - Donate PayPal - Obrigado!
+mode 62,16
+color 1f
+echo.
+echo.
+echo.
+echo                    OBRIGADO PELO APOIO!
+echo.
+echo.
+echo      Direcionando para doação...
+echo.
+echo      #Compartilhe com seus amigos.
+echo.
+echo.
+echo.
+set urlpaypal="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6XRSGDU6FKWT2&source=url"
+rundll32 url.dll,FileProtocolHandler %urlpaypal%
+pause
+goto %op%
