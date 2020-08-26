@@ -1,7 +1,7 @@
 # Password Protect Folder
 
 [![Developed by Bryan Lima](https://img.shields.io/badge/Developed%20by-Bryan%20Lima-blue.svg?longCache=true&style=for-the-badge)](https://github.com/bryan-lima)
-[![OS](https://img.shields.io/badge/OS-Windows-blue.svg?style=for-the-badge)](https://www.microsoft.com/windows/) [![Github Release](https://img.shields.io/github/v/release/bryan-lima/password-protect-folder.svg?style=for-the-badge)](https://github.com/bryan-lima/password-protect-folder/releases)
+[![OS](https://img.shields.io/badge/OS-Windows-blue.svg?style=for-the-badge)](https://www.microsoft.com/windows/) [![Github Release](https://img.shields.io/github/release/bryan-lima/password-protect-folder/all.svg?style=for-the-badge)](https://github.com/bryan-lima/password-protect-folder/releases) [![Github Tag](https://img.shields.io/github/v/tag/bryan-lima/password-protect-folder?style=for-the-badge)](https://github.com/bryan-lima/password-protect-folder/tags)
 [![License](https://img.shields.io/github/license/bryan-lima/password-protect-folder.svg?style=for-the-badge)](https://github.com/bryan-lima/password-protect-folder/blob/master/LICENSE)
 
 Proteja sua pasta com uma senha local para manter o conteúdo da pasta longe de interesseiros como familiares e amigos.
